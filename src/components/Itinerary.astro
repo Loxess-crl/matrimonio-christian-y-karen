@@ -1,0 +1,51 @@
+---
+const itinerary = [
+  {
+    title: "Ceremonia",
+    time: "07:00 P.M.",
+    icon: "/icons/church.webp",
+  },
+  {
+    title: "Boda Civil",
+    time: "08:30 P.M.",
+    icon: "/icons/rings.webp",
+  },
+  {
+    title: "Recepción",
+    time: "09:30 P.M.",
+    icon: "/icons/glass.webp",
+  },
+  {
+    title: "Cena",
+    time: "10:00 P.M.",
+    icon: "/icons/cutlery.webp",
+  },
+  {
+    title: "Todo mundo a bailar",
+    time: "10:30 P.M.",
+    icon: "/icons/heels.webp",
+  },
+  {
+    title: "Fin del evento",
+    time: "05:00 A.M.",
+    icon: "/icons/wedding-car.webp",
+  },
+];
+---
+
+<section class="my-24 container mx-auto flex flex-col items-center">
+  <h2 class="text-3xl font-semibold text-center">ITINERARIO</h2>
+  <div class="space-y-4 mt-6">
+    {
+      itinerary.map((item) => (
+        <div class="flex items-center gap-12">
+          <img src={item.icon} alt={item.title} class="w-16 h-auto" />
+          <div>
+            <p class="text-gray-600 font-semibold">{item.time}</p>
+            <h3 class="text-lg uppercase max-w-40">{item.title}</h3>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

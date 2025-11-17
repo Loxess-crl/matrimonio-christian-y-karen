@@ -1,0 +1,51 @@
+---
+import Image from "astro/components/Image.astro";
+---
+
+<section>
+  <Image
+    src="/images/novios-5.webp"
+    alt="Foto de Christian y Karen"
+    class="w-full h-[90vh] object-cover object-center mb-6"
+    width="1920"
+    height="1080"
+    loading="lazy"
+  />
+  <div class="container mx-auto my-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div
+        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+      >
+        <img src="/icons/clothing.webp" alt="Ceremonia" class="w-16 h-auto" />
+        <h3 class="font-semibold text-xl">Vestimenta</h3>
+        <p class="font-semibold">Elegante</p>
+        <p class="mx-auto">Varones: Traje</p>
+        <p class="mx-auto">Damas: Vestido</p>
+      </div>
+      <div
+        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+      >
+        <img src="/icons/heart.webp" alt="Ceremonia" class="w-16 h-auto" />
+        <h3 class="font-semibold text-xl">Reservado para adultos</h3>
+        <p class="px-12">
+          Desde el respeto y el amor consideramos que este evento es exclusivo
+          para adultos, tus hijos estarán más seguros y cómodos en casa
+        </p>
+      </div>
+      <div
+        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+      >
+        <img src="/icons/gift.webp" alt="Ceremonia" class="w-16 h-auto" />
+        <p class="px-8">
+          Tu presencia es el mejor regalo en este día tan especial. Si deseas
+          hacernos un presente, puedes hacerlo en:
+        </p>
+        <div class="leading-6 mt-2 text-center">
+          <p><strong class="uppercase">Cuenta BCP: </strong>30512038059142</p>
+          <p><strong class="uppercase">CCI: </strong>0023051120380591421</p>
+          <p>(Karen A. Vega Racchumí)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

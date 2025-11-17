@@ -1,22 +1,99 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "@/global.css";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const {
+  title = "Karen & Christian - ¡Nos Casamos!",
+  description = "Acompáñanos en la celebración de nuestro amor y compromiso eterno.",
+  image = "/images/novios-2.webp",
+  url = "https://karenychristian.vercel.app",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || url);
+---
+
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="boda, matrimonio, Karen y Christian, celebración, amor, compromiso, ceremonia, fiesta, invitados"
+    />
+    <meta name="author" content="Karen & Christian" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, canonicalURL)} />
+    <meta property="og:image:alt" content="Karen & Christian - Nos Casamos" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content="Karen & Christian" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, canonicalURL)} />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#10b981" />
+    <meta name="msapplication-TileColor" content="#10b981" />
+
+    <!-- Structured Data / JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: "Karen & Christian",
+        description:
+          "Acompáñanos en la celebración de nuestro amor y compromiso eterno.",
+        url: url,
+        applicationCategory: "SportsApplication",
+        operatingSystem: "Android, iOS",
+        offers: {
+          "@type": "Offer",
+          category: "Sports & Recreation",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          ratingCount: "1250",
+        },
+        author: {
+          "@type": "Organization",
+          name: "Karen & Christian",
+        },
+        availableOnDevice: ["Mobile", "Tablet", "Desktop"],
+        inLanguage: "es-PE",
+      })}
+    />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
