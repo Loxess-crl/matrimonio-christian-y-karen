@@ -3,44 +3,66 @@ import Image from "astro/components/Image.astro";
 ---
 
 <section>
-  <Image
-    src="/images/novios-5.webp"
-    alt="Foto de Christian y Karen"
-    class="w-full h-[90vh] object-cover object-center mb-6"
-    width="1920"
-    height="1080"
-    loading="lazy"
-  />
-  <div class="container mx-auto my-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+  <div class="parallax-container overflow-hidden">
+    <Image
+      src="/images/novios-5.webp"
+      alt="Foto de Christian y Karen"
+      class="w-full h-[40vh] md:h-[60vh] lg:h-[90vh] object-cover object-center mb-6 parallax-image"
+      width="1920"
+      height="1080"
+      loading="lazy"
+    />
+  </div>
+  <div class="container mx-auto my-8 md:my-12 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
       <div
-        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+        class="flex flex-col items-center text-center gap-2 bg-surface p-4 md:p-6 rounded-lg pb-12 md:pb-24"
+        data-aos="flip-left"
+        data-aos-delay="100"
       >
-        <img src="/icons/clothing.webp" alt="Ceremonia" class="w-16 h-auto" />
-        <h3 class="font-semibold text-xl">Vestimenta</h3>
-        <p class="font-semibold">Elegante</p>
-        <p class="mx-auto">Varones: Traje</p>
-        <p class="mx-auto">Damas: Vestido</p>
+        <img
+          src="/icons/clothing.webp"
+          alt="Ceremonia"
+          class="w-12 md:w-16 h-auto"
+        />
+        <h3 class="font-semibold text-lg md:text-xl">Vestimenta</h3>
+        <p class="font-semibold text-sm md:text-base">Elegante</p>
+        <p class="mx-auto text-sm md:text-base">Varones: Traje</p>
+        <p class="mx-auto text-sm md:text-base">Damas: Vestido</p>
       </div>
       <div
-        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+        class="flex flex-col items-center text-center gap-2 bg-surface p-4 md:p-6 rounded-lg pb-12 md:pb-24"
+        data-aos="flip-left"
+        data-aos-delay="200"
       >
-        <img src="/icons/heart.webp" alt="Ceremonia" class="w-16 h-auto" />
-        <h3 class="font-semibold text-xl">Reservado para adultos</h3>
-        <p class="px-12">
+        <img
+          src="/icons/heart.webp"
+          alt="Ceremonia"
+          class="w-12 md:w-16 h-auto"
+        />
+        <h3 class="font-semibold text-lg md:text-xl">Reservado para adultos</h3>
+        <p class="px-4 md:px-12 text-sm md:text-base">
           Desde el respeto y el amor consideramos que este evento es exclusivo
           para adultos, tus hijos estarán más seguros y cómodos en casa
         </p>
       </div>
       <div
-        class="flex flex-col items-center text-center gap-2 bg-surface p-6 rounded-lg pb-24"
+        class="flex flex-col items-center text-center gap-2 bg-surface p-4 md:p-6 rounded-lg pb-12 md:pb-24"
+        data-aos="flip-left"
+        data-aos-delay="300"
       >
-        <img src="/icons/gift.webp" alt="Ceremonia" class="w-16 h-auto" />
-        <p class="px-8">
+        <img
+          src="/icons/gift.webp"
+          alt="Ceremonia"
+          class="w-12 md:w-16 h-auto"
+        />
+        <p class="px-4 md:px-8 text-sm md:text-base">
           Tu presencia es el mejor regalo en este día tan especial. Si deseas
           hacernos un presente, puedes hacerlo en:
         </p>
-        <div class="leading-6 mt-2 text-center">
+        <div
+          class="leading-5 md:leading-6 mt-2 text-center text-sm md:text-base"
+        >
           <p><strong class="uppercase">Cuenta BCP: </strong>30512038059142</p>
           <p><strong class="uppercase">CCI: </strong>0023051120380591421</p>
           <p>(Karen A. Vega Racchumí)</p>

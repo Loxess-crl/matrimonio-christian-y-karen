@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "aos": "^3.0.0-beta.6",
     "astro": "^5.15.5",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }

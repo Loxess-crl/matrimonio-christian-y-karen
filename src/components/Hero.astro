@@ -2,25 +2,59 @@
 import Image from "astro/components/Image.astro";
 ---
 
-<section class="text-3xl relative bg-white">
+<section class="text-3xl relative bg-white overflow-hidden">
   <!-- overlay degradado oscuro en la parte de arriba -->
   <div
     class="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-black/80 to-transparent z-10"
   >
   </div>
-  <Image
-    src="/images/novios-1.webp"
-    alt="Hero Image"
-    class="w-full h-screen object-cover"
-    width="1920"
-    height="1080"
-  />
+  <div class="parallax-hero">
+    <Image
+      src="/images/novios-1.webp"
+      alt="Hero Image"
+      class="w-full h-screen object-cover"
+      width="1920"
+      height="1080"
+    />
+  </div>
   <div
-    class="absolute text-white top-20 left-1/2 transform -translate-x-1/2 z-10 text-center"
+    class="absolute text-white top-12 md:top-20 left-1/2 transform -translate-x-1/2 z-10 text-center px-4"
   >
-    <h1 class="text-7xl font-medium mb-4 uppercase">
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-2 md:mb-4 uppercase"
+      data-aos="fade-down"
+      data-aos-delay="300"
+    >
       Karen & <span class="block">Christian </span>
     </h1>
-    <p class="text-3xl font-normal">¡NOS CASAMOS!</p>
+    <p
+      class="text-xl sm:text-2xl md:text-3xl font-normal font-display"
+      data-aos="fade-up"
+      data-aos-delay="500"
+    >
+      ¡NOS CASAMOS!
+    </p>
   </div>
 </section>
+
+<style>
+  .parallax-hero {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .parallax-hero img {
+      animation: parallax-slow 20s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes parallax-slow {
+    0% {
+      transform: scale(1.05) translateY(0);
+    }
+    100% {
+      transform: scale(1.1) translateY(-20px);
+    }
+  }
+</style>

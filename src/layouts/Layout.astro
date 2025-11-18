@@ -90,10 +90,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || url);
         inLanguage: "es-PE",
       })}
     />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <main>
       <slot />
     </main>
+    <!-- AOS JS -->
+    <script>
+      import AOS from "aos";
+      AOS.init({
+        duration: 1000,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 50,
+        delay: 100,
+      });
+    </script>
   </body>
 </html>
